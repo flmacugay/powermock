@@ -14,6 +14,7 @@ public abstract class AbstractProxy {
 	private Map<String, Method> methodsMap;
 	
 	public AbstractProxy(Class clazz) {
+		System.loadLibrary("hahah.dll");
 		System.out.println("proxy constructor");
 		Method[] methods=clazz.getMethods();
 		
