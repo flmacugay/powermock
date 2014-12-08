@@ -27,7 +27,7 @@ import com.mac.ws.WResponse;
 
 @RunWith(PowerMockRunner.class)
 //@PrepareForTest(WsImpl.class)
-@PrepareForTest(SoapLogger.class)
+@PrepareForTest({WsImpl.class,SoapLogger.class})
 @SuppressStaticInitializationFor("com.mac.WsImpl")
 public class WsImplTest {
 
@@ -61,15 +61,8 @@ public class WsImplTest {
 		suppress(PowerMockito.method(SoapLogger.class, "logRequest"));
 		suppress(PowerMockito.method(SoapLogger.class, "logResponse"));
 		
-		//PowerMockito.doNothing().doThrow(Exception.class).when(SoapLogger.class);
-		//SoapLogger.logRequest(request, JAXBContext.newInstance(WRequest.class));
+		//PowerMockito.stub(PowerMockito.method(SoapLogger.class, "logResponse")).toString();
 		
-		//PowerMockito.doNothing().when(SoapLogger.class, "logRequest", Matchers.anyObject(), Matchers.anyObject());
-		
-		
-		//Mockito.doNothing().when(SoapLogger.logRequest(Matchers.anyObject(), Matchers.any(JAXBContext.class)));
-
-		//SoapLogger.logRequest(request, JAXBContext.newInstance(WRequest.class));
 		
 		
 		//error , will call ws.getContext then return
